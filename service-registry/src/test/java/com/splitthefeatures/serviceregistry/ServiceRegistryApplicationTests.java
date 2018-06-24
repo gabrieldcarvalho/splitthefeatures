@@ -1,4 +1,4 @@
-package splitthefeatures.serviceregistry;
+package com.splitthefeatures.serviceregistry;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
