@@ -13,3 +13,7 @@ Forget about the api-gateway -> didn't have the time to finish
 * Documentation (got too late, sorry!)
 * It's not randomizing really (times out);
 
+# Future developments
+* Authentication;
+* Restaurants validating coupons in order to make then available again;
+
