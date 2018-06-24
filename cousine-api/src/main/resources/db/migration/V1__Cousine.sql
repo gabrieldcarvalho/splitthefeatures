@@ -6,7 +6,8 @@ CREATE TABLE cousine (
 );
 
 INSERT INTO cousine (id, description) VALUES
-(1, 'Chinese'),
-(2, 'Pizza'),
-(3, 'Vietnamese'),
-(4, 'Sushi');
+(1, 'Brazilian'),
+(2, 'Canadian'),
+(3, 'Pizza'),
+(4, 'Japanese'),
+(5, 'Burger');
