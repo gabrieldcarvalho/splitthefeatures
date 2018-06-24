@@ -1,5 +1,6 @@
 package com.splitthefeatures.cousineapi.controller;
 
+import com.splitthefeatures.cousineapi.dto.RestaurantDto;
 import com.splitthefeatures.cousineapi.service.CousineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,15 +27,21 @@ public class CousineController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("api/v1/cousine")
+    @GetMapping("api/v1/cousines")
     public List<CousineDto> findAll() {
         return cousineService.findAll();
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("api/v1/cousine/search/{query}")
+    @GetMapping("api/v1/cousines/search/{query}")
     public List<CousineDto> search(@PathVariable("query") @NotNull String description) {
         return cousineService.findByDescription(description);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("api/v1/cousines/{cousineId}/restaurants")
+    public List<RestaurantDto> searchRestaurantsByCousineId(@PathVariable("cousineId") @NotNull Integer cousineId) {
+        return cousineService.findRestaurantsByCousineId(cousineId);
     }
 
 }

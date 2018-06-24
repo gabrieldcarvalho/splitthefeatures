@@ -1,6 +1,7 @@
 package com.splitthefeatures.cousineapi.service;
 
 import com.splitthefeatures.cousineapi.dto.CousineDto;
+import com.splitthefeatures.cousineapi.dto.RestaurantDto;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ public interface CousineService {
 
     List<CousineDto> findAll();
     List<CousineDto> findByDescription(String description);
+    List<RestaurantDto> findRestaurantsByCousineId(Integer cousineId);
 }

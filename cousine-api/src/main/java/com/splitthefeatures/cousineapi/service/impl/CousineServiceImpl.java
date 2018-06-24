@@ -1,5 +1,7 @@
 package com.splitthefeatures.cousineapi.service.impl;
 
+import com.splitthefeatures.cousineapi.component.RestaurantClient;
+import com.splitthefeatures.cousineapi.dto.RestaurantDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.splitthefeatures.cousineapi.dto.CousineDto;
@@ -16,14 +18,17 @@ import java.util.stream.Collectors;
 @Service
 public class CousineServiceImpl implements CousineService {
 
-    final CousineRepository cousineRepository;
-    final CousineMapper cousineMapper;
+    private final CousineRepository cousineRepository;
+    private final CousineMapper cousineMapper;
+    private final RestaurantClient restaurantClient;
 
     @Autowired
     public CousineServiceImpl(final CousineRepository cousineRepository,
-                              final CousineMapper cousineMapper) {
+                              final CousineMapper cousineMapper,
+                              final RestaurantClient restaurantClient) {
         this.cousineRepository = cousineRepository;
         this.cousineMapper = cousineMapper;
+        this.restaurantClient = restaurantClient;
     }
 
     public List<CousineDto> findAll() {
@@ -40,5 +45,9 @@ public class CousineServiceImpl implements CousineService {
                 .stream()
                 .map(cousineMapper::toDto)
                 .collect(Collectors.toList());
+    }
+
+    public List<RestaurantDto> findRestaurantsByCousineId(Integer cousineId) {
+        return this.restaurantClient.getStoresByCousineId(cousineId);
     }
 }
