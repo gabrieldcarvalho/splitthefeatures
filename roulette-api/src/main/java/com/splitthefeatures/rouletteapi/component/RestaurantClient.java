@@ -4,7 +4,6 @@ import com.splitthefeatures.rouletteapi.dto.RestaurantDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -13,6 +12,6 @@ import java.util.List;
  */
 @FeignClient(value = "restaurant-api", path = "/api/v1/restaurants")
 public interface RestaurantClient {
-    @RequestMapping(method = RequestMethod.GET, value = "/search")
-    List<RestaurantDto> getRestaurantsByCousineId(@RequestParam("cousineId") Integer cousineId);
+    @RequestMapping(method = RequestMethod.GET)
+    List<RestaurantDto> findAllRestaurants();
 }

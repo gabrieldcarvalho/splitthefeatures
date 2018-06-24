@@ -13,6 +13,8 @@ public class CouponDto {
 
     private Long id;
 
+    private Long restaurantId;
+
     private Double discountPercentage;
 
     private String customer;
@@ -26,12 +28,24 @@ public class CouponDto {
     public CouponDto() {
     }
 
+    public enum CouponStatusEnum {
+        AVAILABLE, USED, EXPIRED
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public Double getDiscountPercentage() {
@@ -58,7 +72,19 @@ public class CouponDto {
         this.used = used;
     }
 
-    public enum CouponStatusEnum {
-        AVAILABLE, USED, EXPIRED
+    public LocalDateTime getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(LocalDateTime expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public CouponStatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(CouponStatusEnum status) {
+        this.status = status;
     }
 }

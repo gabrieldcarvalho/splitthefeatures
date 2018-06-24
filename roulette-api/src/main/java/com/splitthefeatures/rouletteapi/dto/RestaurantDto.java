@@ -5,22 +5,22 @@ package com.splitthefeatures.rouletteapi.dto;
  * Created by gabrieldcarvalho on 2018/06/24
  */
 public class RestaurantDto {
-    private Integer id;
+    private Long id;
 
     private String name;
 
     private String address;
 
-    private Integer cousineId;
+    private Long cousineId;
 
     public RestaurantDto() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -40,11 +40,11 @@ public class RestaurantDto {
         this.address = address;
     }
 
-    public Integer getCousineId() {
+    public Long getCousineId() {
         return cousineId;
     }
 
-    public void setCousineId(Integer cousineId) {
+    public void setCousineId(Long cousineId) {
         this.cousineId = cousineId;
     }
 }

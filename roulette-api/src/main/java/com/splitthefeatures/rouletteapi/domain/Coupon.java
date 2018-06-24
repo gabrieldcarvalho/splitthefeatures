@@ -21,6 +21,9 @@ public class Coupon {
     @GeneratedValue
     private Long id;
 
+    @NotNull
+    private Long restaurantId;
+
     @Range(min = 0, max = 100)
     @Digits(integer = 100, fraction = 2)
     private Double discountPercentage;
@@ -31,6 +34,7 @@ public class Coupon {
     @NotNull
     private LocalDateTime useDate;
 
+    @NotNull
     private LocalDateTime expirationDate;
 
     public Coupon() {
@@ -42,6 +46,14 @@ public class Coupon {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public Double getDiscountPercentage() {
