@@ -14,6 +14,7 @@ import com.splitthefeatures.rouletteapi.service.RouletteService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 /**
  * Created by gabrieldcarvalho on 2018/06/24
@@ -32,8 +33,12 @@ public class RouletteServiceImpl implements RouletteService {
 
     public CouponDto playRoulette(RouletteRequestDto rouletteRequest) {
 
-        RestaurantDto restaurantDto = restaurantClient
-                .findAllRestaurants()
+        Random rand = new Random();
+
+        List<RestaurantDto> restaurantDtos = restaurantClient
+                .findAllRestaurants();
+
+        RestaurantDto restaurantDto = restaurantDtos
                 .stream()
                 .filter(restaurant -> Optional
                         .ofNullable(rouletteRequest.getCousineId())
