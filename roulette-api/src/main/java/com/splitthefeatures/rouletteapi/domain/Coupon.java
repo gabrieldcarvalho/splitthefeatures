@@ -7,9 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 /**
  * Created by gabrieldcarvalho on 2018/06/24
@@ -29,7 +29,9 @@ public class Coupon {
     private String customer;
 
     @NotNull
-    private Boolean used;
+    private LocalDateTime useDate;
+
+    private LocalDateTime expirationDate;
 
     public Coupon() {
     }
@@ -58,11 +60,19 @@ public class Coupon {
         this.customer = customer;
     }
 
-    public Boolean getUsed() {
-        return used;
+    public LocalDateTime getUseDate() {
+        return useDate;
     }
 
-    public void setUsed(Boolean used) {
-        this.used = used;
+    public void setUseDate(LocalDateTime useDate) {
+        this.useDate = useDate;
+    }
+
+    public LocalDateTime getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(LocalDateTime expirationDate) {
+        this.expirationDate = expirationDate;
     }
 }
