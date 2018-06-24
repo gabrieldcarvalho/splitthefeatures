@@ -10,4 +10,5 @@ INSERT INTO cousine (id, description) VALUES
 (2, 'Canadian'),
 (3, 'Pizza'),
 (4, 'Japanese'),
-(5, 'Burger');
+(5, 'Burger'),
+(6, 'Unknown');

@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 public class Cousine {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @Size(max = 200)
     private String description;
@@ -22,11 +22,11 @@ public class Cousine {
     public Cousine() {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

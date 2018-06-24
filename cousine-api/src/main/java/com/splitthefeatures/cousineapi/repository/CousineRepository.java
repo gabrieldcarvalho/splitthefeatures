@@ -9,9 +9,9 @@ import java.util.Optional;
 /**
  * Created by gabrieldcarvalho on 2018/06/24
  */
-public interface CousineRepository extends JpaRepository<Cousine, Long> {
+public interface CousineRepository extends JpaRepository<Cousine, Integer> {
 
-    Optional<Cousine> findById(final Long id);
+    Optional<Cousine> findById(final Integer id);
 
     List<Cousine> findAllByDescriptionContainingIgnoreCase(String description);
 
