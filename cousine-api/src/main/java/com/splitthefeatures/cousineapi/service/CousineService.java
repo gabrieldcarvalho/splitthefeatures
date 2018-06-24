@@ -12,5 +12,5 @@ public interface CousineService {
 
     List<CousineDto> findAll();
     List<CousineDto> findByDescription(String description);
-    List<RestaurantDto> findRestaurantsByCousineId(Integer cousineId);
+    List<RestaurantDto> findRestaurantsByCousineId(Long cousineId);
 }

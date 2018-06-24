@@ -5,17 +5,17 @@ package com.splitthefeatures.cousineapi.dto;
  * Created by gabrieldcarvalho on 2018/06/24
  */
 public class CousineDto {
-    private Integer id;
+    private Long id;
     private String description;
 
     public CousineDto() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -52,7 +52,7 @@ public class CousineServiceImpl implements CousineService {
                 .collect(Collectors.toList());
     }
 
-    public List<RestaurantDto> findRestaurantsByCousineId(Integer cousineId) {
+    public List<RestaurantDto> findRestaurantsByCousineId(Long cousineId) {
         return this.cousineRepository.findById(cousineId)
                 .map(cousine -> this.restaurantClient.getRestaurantsByCousineId(cousine.getId()))
                 .orElseThrow(() -> new NotFoundException("Cousine not found"));

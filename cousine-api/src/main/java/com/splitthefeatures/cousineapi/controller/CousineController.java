@@ -40,7 +40,7 @@ public class CousineController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("api/v1/cousines/{cousineId}/restaurants")
-    public List<RestaurantDto> searchRestaurantsByCousineId(@PathVariable("cousineId") @NotNull Integer cousineId) {
+    public List<RestaurantDto> searchRestaurantsByCousineId(@PathVariable("cousineId") @NotNull Long cousineId) {
         return cousineService.findRestaurantsByCousineId(cousineId);
     }
 
