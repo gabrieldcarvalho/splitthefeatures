@@ -9,12 +9,12 @@ import java.util.Optional;
 /**
  * Created by gabrieldcarvalho on 2018/06/24
  */
-public interface RestaurantRepository extends JpaRepository<Restaurant, Integer> {
+public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
-    Optional<Restaurant> findById(final Integer id);
+    Optional<Restaurant> findById(final Long id);
 
     List<Restaurant> findAllByNameContainingIgnoreCase(String name);
 
-    List<Restaurant> findByCousineId(Integer cousineId);
+    List<Restaurant> findByCousineId(Long cousineId);
 
 }

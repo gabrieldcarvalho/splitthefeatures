@@ -44,7 +44,7 @@ public class RestaurantServiceImpl implements RestaurantService {
                 .collect(Collectors.toList());
     }
 
-    public RestaurantDto findById(Integer id) {
+    public RestaurantDto findById(Long id) {
         return this.restaurantRepository
                 .findById(id)
                 .map(restaurantMapper::toDto)
@@ -59,7 +59,7 @@ public class RestaurantServiceImpl implements RestaurantService {
                 .collect(Collectors.toList());
     }
 
-    public List<RestaurantDto> findByCousineId(Integer cousineId) {
+    public List<RestaurantDto> findByCousineId(Long cousineId) {
         return this.restaurantRepository
                 .findByCousineId(cousineId)
                 .stream()

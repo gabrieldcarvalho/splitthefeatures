@@ -14,23 +14,23 @@ import javax.validation.constraints.Size;
 public class Restaurant {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     @Size(max = 200)
     private String name;
 
     private String address;
 
-    private Integer cousineId;
+    private Long cousineId;
 
     public Restaurant() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -50,11 +50,11 @@ public class Restaurant {
         this.address = address;
     }
 
-    public Integer getCousineId() {
+    public Long getCousineId() {
         return cousineId;
     }
 
-    public void setCousineId(Integer cousineId) {
+    public void setCousineId(Long cousineId) {
         this.cousineId = cousineId;
     }
 }

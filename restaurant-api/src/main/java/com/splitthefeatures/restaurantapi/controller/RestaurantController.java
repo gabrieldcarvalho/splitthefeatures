@@ -30,7 +30,7 @@ public class RestaurantController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("api/v1/restaurants/{restaurantId}")
-    public RestaurantDto search(@PathVariable("restaurantId") @NotNull Integer restaurantId) {
+    public RestaurantDto search(@PathVariable("restaurantId") @NotNull Long restaurantId) {
         return restaurantService.findById(restaurantId);
     }
 
@@ -43,7 +43,7 @@ public class RestaurantController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("api/v1/restaurants/search")
-    public List<RestaurantDto> searchByCousineId(@RequestParam("cousineId") @NotNull Integer cousineId) {
+    public List<RestaurantDto> searchByCousineId(@RequestParam("cousineId") @NotNull Long cousineId) {
         return restaurantService.findByCousineId(cousineId);
     }
 
