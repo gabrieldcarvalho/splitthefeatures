@@ -48,6 +48,6 @@ public class CousineServiceImpl implements CousineService {
     }
 
     public List<RestaurantDto> findRestaurantsByCousineId(Integer cousineId) {
-        return this.restaurantClient.getStoresByCousineId(cousineId);
+        return this.restaurantClient.getRestaurantsByCousineId(cousineId);
     }
 }
