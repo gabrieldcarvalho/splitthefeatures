@@ -7,8 +7,6 @@ import java.time.LocalDateTime;
 /**
  * Created by gabrieldcarvalho on 2018/06/24
  */
-@Entity
-@Table(name = "coupon")
 public class CouponDto {
 
     private Long id;
