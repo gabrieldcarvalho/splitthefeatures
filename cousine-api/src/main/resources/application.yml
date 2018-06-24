@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Cousine API
+    name: cousine-api
   h2:
     console:
       enabled: true
