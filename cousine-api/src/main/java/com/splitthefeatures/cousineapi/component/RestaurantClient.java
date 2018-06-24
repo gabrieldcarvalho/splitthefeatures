@@ -14,5 +14,5 @@ import java.util.List;
 @FeignClient(value = "restaurant-api", path = "/api/v1/restaurants")
 public interface RestaurantClient {
     @RequestMapping(method = RequestMethod.GET, value = "/search")
-    List<RestaurantDto> getStoresByCousineId(@RequestParam("cousineId") Integer cousineId);
+    List<RestaurantDto> getRestaurantsByCousineId(@RequestParam("cousineId") Integer cousineId);
 }
