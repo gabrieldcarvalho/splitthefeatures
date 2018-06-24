@@ -14,7 +14,7 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:~/test
+    url: jdbc:h2:file:~/splitthefeatures-cousine-api
 
 eureka:
   client:
