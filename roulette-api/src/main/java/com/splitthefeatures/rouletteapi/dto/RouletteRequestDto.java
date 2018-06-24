@@ -1,13 +1,8 @@
 package com.splitthefeatures.rouletteapi.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  * Created by gabrieldcarvalho on 2018/06/24
  */
-@Entity
-@Table(name = "coupon")
 public class RouletteRequestDto {
 
     private Long cousineId;
