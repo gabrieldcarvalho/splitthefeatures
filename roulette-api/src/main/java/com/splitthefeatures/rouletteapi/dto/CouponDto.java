@@ -1,7 +1,5 @@
 package com.splitthefeatures.rouletteapi.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 /**
@@ -17,7 +15,7 @@ public class CouponDto {
 
     private String customer;
 
-    private Boolean used;
+    private LocalDateTime usageDate;
 
     private LocalDateTime expirationDate;
 
@@ -62,12 +60,12 @@ public class CouponDto {
         this.customer = customer;
     }
 
-    public Boolean getUsed() {
-        return used;
+    public LocalDateTime getUsageDate() {
+        return usageDate;
     }
 
-    public void setUsed(Boolean used) {
-        this.used = used;
+    public void setUsageDate(LocalDateTime usageDate) {
+        this.usageDate = usageDate;
     }
 
     public LocalDateTime getExpirationDate() {

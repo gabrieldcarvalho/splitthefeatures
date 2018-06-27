@@ -14,12 +14,12 @@ import java.time.LocalDateTime;
 public abstract class CouponMapper {
 
     @Mappings(value = {
-        @Mapping(target = "status", expression = "java(convertCouponStatus(coupon.getUseDate(), coupon.getExpirationDate()))")
+        @Mapping(target = "status", expression = "java(convertCouponStatus(coupon.getUsageDate(), coupon.getExpirationDate()))")
     })
     public abstract CouponDto toDto(final Coupon coupon);
 
-    public CouponDto.CouponStatusEnum convertCouponStatus(LocalDateTime useDate, LocalDateTime expirationDate) {
-        if(useDate != null) {
+    public CouponDto.CouponStatusEnum convertCouponStatus(LocalDateTime usageDate, LocalDateTime expirationDate) {
+        if(usageDate != null) {
             return CouponDto.CouponStatusEnum.USED;
         } else if(LocalDateTime.now().isAfter(expirationDate)) {
             return CouponDto.CouponStatusEnum.EXPIRED;

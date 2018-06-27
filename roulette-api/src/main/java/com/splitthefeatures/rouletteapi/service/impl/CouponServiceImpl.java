@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by gabrieldcarvalho on 2018/06/24
@@ -31,20 +32,23 @@ public class CouponServiceImpl implements CouponService {
 
     @Override
     public CouponDto findActiveCouponByCustomer(String customer) {
-        return this.couponRepository.findTopByCustomerAndUseDateIsNullAndExpirationDateAfter(customer, LocalDateTime.now())
+        return this.couponRepository.findTopByCustomerAndUsageDateIsNullAndExpirationDateAfter(customer, LocalDateTime.now())
                 .map(couponMapper::toDto)
                 .orElseThrow(() -> new NotFoundException("Active coupon not found for this customer"));
     }
 
     @Override
     public boolean hasActiveCouponByCustomer(String customer) {
-        return this.couponRepository.findTopByCustomerAndUseDateIsNullAndExpirationDateAfter(customer, LocalDateTime.now())
+        return this.couponRepository.findTopByCustomerAndUsageDateIsNullAndExpirationDateAfter(customer, LocalDateTime.now())
                 .isPresent();
     }
 
     @Override
     public List<CouponDto> findCouponsByCustomer(String customer) {
-        return null;
+        return this.couponRepository.findByCustomer(customer)
+                .stream()
+                .map(couponMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -67,8 +71,8 @@ public class CouponServiceImpl implements CouponService {
         Coupon coupon = this.couponRepository
                 .findById(couponId)
                 .orElseThrow(() -> new NotFoundException("Coupon not found"));
-        if(coupon.getUseDate() != null) {
-            coupon.setUseDate(LocalDateTime.now());
+        if(coupon.getUsageDate() != null) {
+            coupon.setUsageDate(LocalDateTime.now());
             this.couponRepository.save(coupon);
         }
     }

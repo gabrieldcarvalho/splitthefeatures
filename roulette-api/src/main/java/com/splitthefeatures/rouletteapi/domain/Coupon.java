@@ -32,7 +32,7 @@ public class Coupon {
     private String customer;
 
     @NotNull
-    private LocalDateTime useDate;
+    private LocalDateTime usageDate;
 
     @NotNull
     private LocalDateTime expirationDate;
@@ -72,12 +72,12 @@ public class Coupon {
         this.customer = customer;
     }
 
-    public LocalDateTime getUseDate() {
-        return useDate;
+    public LocalDateTime getUsageDate() {
+        return usageDate;
     }
 
-    public void setUseDate(LocalDateTime useDate) {
-        this.useDate = useDate;
+    public void setUsageDate(LocalDateTime usageDate) {
+        this.usageDate = usageDate;
     }
 
     public LocalDateTime getExpirationDate() {
