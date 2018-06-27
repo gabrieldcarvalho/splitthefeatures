@@ -18,5 +18,5 @@ Forget about the api-gateway -> didn't have the time to finish
 * Restaurants validating coupons in order to make then available again;
 
 # Post-event edit
-Got an hour to at least set the roulette working on a branch:
+Took an hour to at least set the roulette working on a branch:
 https://github.com/gabrieldcarvalho/splitthefeatures/tree/chore/redemption-code
