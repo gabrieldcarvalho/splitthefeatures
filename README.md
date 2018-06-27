@@ -9,11 +9,14 @@ If you're an indecise person and still wants to have no trouble ordering a good 
 
 # Hou to execute it
 * Run the service-registry first, and then the others!
-* Forget about the api-gateway -> didn't have the time to finish
+* Forget about the api-gateway (still not ready)
 
 # Things to be done:
 * Tests and tests
-* Swagger
+* Swagger documentation
+* Set the Zuul api-gateway
+* Calculate the current hard-coded discount value
+* Improve the random restaurant obtainance; It shouldn't search all the restaurants every time
 
 # Future developments
 * Authentication / Customer registrations;
