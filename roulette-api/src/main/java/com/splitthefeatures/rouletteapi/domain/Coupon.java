@@ -2,10 +2,7 @@ package com.splitthefeatures.rouletteapi.domain;
 
 import org.hibernate.validator.constraints.Range;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -18,7 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "coupon")
 public class Coupon {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -31,7 +28,6 @@ public class Coupon {
     @Size(min = 4, max = 100)
     private String customer;
 
-    @NotNull
     private LocalDateTime usageDate;
 
     @NotNull
