@@ -12,7 +12,7 @@ If you're an indecise person and still wants to have no trouble ordering a good 
 * Forget about the api-gateway (still not ready)
 
 # Things to be done:
-* Tests and tests
+* Unit tests with Mockito; Integration tests with Wiremock/Mockito
 * Swagger documentation
 * Set the Zuul api-gateway
 * Calculate the current hard-coded discount value
@@ -21,5 +21,5 @@ If you're an indecise person and still wants to have no trouble ordering a good 
 # Future developments
 * Authentication / Customer registrations;
 * Location filtering, with a radius input;
-* Restaurants validating coupons in order to make then available again;
+* Restaurants validating coupons in order to allow customers generate new ones;
 
