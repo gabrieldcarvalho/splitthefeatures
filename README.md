@@ -8,7 +8,8 @@ If you're an indecise person and still wants to have no trouble ordering a good 
 * You can choose how long it will take to expire the coupon, but once the coupon is generated there is no rollback! Choose it wisely!
 
 # Hou to execute it
-* Run the service-registry first, and then the others!
+* Run the service-registry first, and then the cousine-api, restaurant-api and roulette-api
+* These applications are already set to run in different ports in order to make possible run everything at the same time in development environment
 * Forget about the api-gateway (still not ready)
 
 # Things to be done:
