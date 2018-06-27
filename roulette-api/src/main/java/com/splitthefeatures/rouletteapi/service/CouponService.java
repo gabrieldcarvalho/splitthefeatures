@@ -11,6 +11,6 @@ public interface CouponService {
     CouponDto findActiveCouponByCustomer(String customer);
     boolean hasActiveCouponByCustomer(String customer);
     List<CouponDto> findCouponsByCustomer(String customer);
-    CouponDto generateCoupon(String customer, Long restaurantId, Long activeDays);
+    CouponDto generateCoupon(String customer, Long restaurantId, double discount, Long activeDays);
     void useCoupon(Long couponId);
 }

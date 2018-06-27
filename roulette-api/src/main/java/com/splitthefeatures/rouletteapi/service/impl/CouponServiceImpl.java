@@ -52,13 +52,13 @@ public class CouponServiceImpl implements CouponService {
     }
 
     @Override
-    public CouponDto generateCoupon(String customer, Long restaurantId, Long activeDays) {
+    public CouponDto generateCoupon(String customer, Long restaurantId, double discount, Long activeDays) {
         if(this.hasActiveCouponByCustomer(customer)) {
             throw new ValidationException("Customer already has an active coupon");
         } else {
             Coupon coupon = new Coupon();
             coupon.setCustomer(customer);
-            coupon.setDiscountPercentage(20.0);
+            coupon.setDiscountPercentage(discount);
             coupon.setExpirationDate(LocalDateTime.now().plusDays(activeDays));
             coupon.setRestaurantId(restaurantId);
             coupon = this.couponRepository.save(coupon);

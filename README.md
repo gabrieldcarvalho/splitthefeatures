@@ -16,7 +16,6 @@ If you're an indecise person and still wants to have no trouble ordering a good 
 * Unit tests with Mockito; Integration tests with Wiremock/Mockito
 * Swagger documentation
 * Set the Zuul api-gateway
-* Calculate the current hard-coded discount value
 * Improve the random restaurant obtainance; It shouldn't search all the restaurants every time
 
 # Future developments

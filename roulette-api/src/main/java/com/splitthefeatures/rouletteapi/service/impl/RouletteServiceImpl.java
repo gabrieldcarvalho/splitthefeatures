@@ -1,14 +1,12 @@
 package com.splitthefeatures.rouletteapi.service.impl;
 
 import com.splitthefeatures.rouletteapi.component.RestaurantClient;
-import com.splitthefeatures.rouletteapi.domain.Coupon;
 import com.splitthefeatures.rouletteapi.dto.CouponDto;
 import com.splitthefeatures.rouletteapi.dto.RestaurantDto;
 import com.splitthefeatures.rouletteapi.dto.RouletteRequestDto;
-import com.splitthefeatures.rouletteapi.exception.NotFoundException;
-import com.splitthefeatures.rouletteapi.exception.ValidationException;
 import com.splitthefeatures.rouletteapi.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.splitthefeatures.rouletteapi.service.RouletteService;
 
@@ -22,8 +20,16 @@ import java.util.stream.Collectors;
  */
 @Service
 public class RouletteServiceImpl implements RouletteService {
+
     private final RestaurantClient restaurantClient;
     private final CouponService couponService;
+
+    @Value("${roulette.discount.min}")
+    private double minDiscount;
+    @Value("${roulette.discount.max}")
+    private double maxDiscount;
+    @Value("${roulette.discount.possibilities-for-max}")
+    private double possibilitiesForMaxDiscount;
 
     @Autowired
     public RouletteServiceImpl(CouponService couponService,
@@ -47,6 +53,19 @@ public class RouletteServiceImpl implements RouletteService {
 
         return this.couponService.generateCoupon(rouletteRequest.getCustomer(),
                 randomRestaurant.getId(),
+                calculateDiscount(restaurantDtos.size()),
                 rouletteRequest.getActiveDays());
+    }
+
+    public double calculateDiscount(int possibleResults) {
+        if(possibleResults >= possibilitiesForMaxDiscount) {
+            return maxDiscount;
+        }
+        double discount = possibleResults * (maxDiscount / possibilitiesForMaxDiscount);
+        if(discount < minDiscount) {
+            return minDiscount;
+        } else {
+            return discount;
+        }
     }
 }

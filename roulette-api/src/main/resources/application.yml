@@ -35,3 +35,9 @@ server:
 logging:
   level: DEBUG
   level.org.hibernate.SQL: DEBUG
+
+roulette:
+  discount:
+    min: 5
+    max: 20
+    possibilities-for-max: 10
